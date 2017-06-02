@@ -29,6 +29,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Dispose of any resources that can be recreated.
     }
     @IBAction func statePickerButtonPressed(_ sender: Any) {
+        
+        statePicker.isHidden = false
     }
 
 
@@ -44,6 +46,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return states[row]
         
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        statePickerButton.setTitle(states[row], for: UIControlState.normal)
+        
+        statePicker.isHidden = true
     }
     
     
