@@ -50,6 +50,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         statePickerButton.setTitle(states[row], for: UIControlState.normal)
+        statePickerButton.setTitleColor(UIColor.gray, for: UIControlState.normal)
         
         statePicker.isHidden = true
     }
